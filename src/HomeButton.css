@@ -1,0 +1,28 @@
+div.upper {
+    display: flex;
+    background-color: gray;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid black;
+    width: 300px;
+    
+}
+
+h2 {
+    font-style: italic;
+    font-size: 30px;
+}
+
+#root {
+    border: 1px solid black;
+    width: max-content;
+    padding: 1.5%;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 7%;
+    width: 300px;
+}
