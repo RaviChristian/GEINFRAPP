@@ -13,10 +13,14 @@ h2 {
     font-size: 30px;
 }
 
-#root {
+a.HomeButtonWrapper {
+    display: flex;
+    flex-wrap: wrap;
     border: 1px solid black;
-    width: max-content;
+    width: min-content;
+    height: 18vh;
     padding: 1.5%;
+
 }
 
 .bottom {

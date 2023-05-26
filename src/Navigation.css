@@ -2,6 +2,7 @@ div#Navigation {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     height: 100%;
+    width: 99vw;
     align-items: center;
 }
 
@@ -10,12 +11,12 @@ a {
 }
 
 img {
-    width: 300px;
+    width: 10vh;
     margin-right: 2%;
 }
 
 h1{
-    font-size: 100px;
+    font-size: 24px;
     height: 100%;
     text-align: center;
 }
