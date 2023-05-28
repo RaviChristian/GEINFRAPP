@@ -1,0 +1,6 @@
+.section-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 87vh;
+}
