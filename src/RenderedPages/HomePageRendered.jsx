@@ -1,6 +1,6 @@
-import Navigation from './Components/css/Navigation';
-import Section from './Components/css/section';
-import Footer from './Components/css/Footer';
+import Navigation from '../Components/Navigation.jsx';
+import Section from '../Components/section.jsx';
+import Footer from '../Components/Footer.jsx';
 
 
 function HomePageRendered() {

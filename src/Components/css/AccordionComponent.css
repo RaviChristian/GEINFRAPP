@@ -1,4 +1,5 @@
-.MuiAccordionSummary-root {
+.MuiPaper-root {
 
-
+    background-color: rgb(240, 237, 234) !important;
+    margin-bottom: 1%;
 }

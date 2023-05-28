@@ -10,11 +10,11 @@ function Section() {
                 <div className="upper-buttons">
 
                     <div>
-                        <HomeButton icon="BiSearchAlt" text="Visualize aqui todas as ordens de serviço" title="solicitações" className="custom-button"/>
+                        <HomeButton link='listar' icon="BiSearchAlt" text="Visualize aqui todas as ordens de serviço" title="solicitações" className="custom-button"/>
                     </div>
                     
                     <div>
-                        <HomeButton icon="GiHealthNormal" text="Gerencie as ordens de serviço preventivas" title="prevenções" className="custom-button"/>
+                        <HomeButton link='listar' icon="GiHealthNormal" text="Gerencie as ordens de serviço preventivas" title="prevenções" className="custom-button"/>
                     </div>
 
                 </div>
@@ -22,11 +22,11 @@ function Section() {
                 <div className="lower-buttons">
                 
                     <div>
-                        <HomeButton icon="BsGraphUp" text="Filtre as informações e gere relatórios das ordens de serviço" title="relatórios" className="custom-button"/>
+                        <HomeButton link='cadastrar' icon="BsGraphUp" text="Filtre as informações e gere relatórios das ordens de serviço" title="relatórios" className="custom-button"/>
                     </div>
                     
                     <div>
-                        <HomeButton icon="BsGraphUp" text="Filtre as informações e gere relatórios das ordens de serviço" title="relatórios" className="custom-button"/>
+                        <HomeButton link='cadastrar' icon="BsGraphUp" text="Filtre as informações e gere relatórios das ordens de serviço" title="relatórios" className="custom-button"/>
                     </div>
                 </div>
 

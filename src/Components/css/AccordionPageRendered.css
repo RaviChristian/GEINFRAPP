@@ -1,0 +1,9 @@
+.accordion-inner-wrapper {
+    padding-top: 1%;
+    width: 70%;
+    min-height: 87vh;
+}
+.accordion-outter-wrapper {
+    display: flex;
+    justify-content: center;
+}

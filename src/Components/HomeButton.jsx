@@ -13,11 +13,11 @@ const iconMap = {
 };
 
 
-function HomeButton({icon,title,text}){
+function HomeButton({icon,title,text,link}){
 
     return (
         <>
-            <a href='#' class="HomeButtonWrapper">
+            <a href={link} class="HomeButtonWrapper">
                 <div class="upper">
                     {iconMap[icon]}
                     <h2>{title}</h2>

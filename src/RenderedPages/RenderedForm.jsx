@@ -1,6 +1,6 @@
-import Footer from './Components/css/Footer';
-import Navigation from './Components/css/Navigation';
-import Form from './Components/css/Form';
+import Footer from '../Components/Footer';
+import Navigation from '../Components/Navigation';
+import Form from '../Components/Form';
 
 function RenderedForm() {
 
