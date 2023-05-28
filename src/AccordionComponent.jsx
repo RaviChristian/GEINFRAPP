@@ -1,6 +1,7 @@
 import './AccordionComponent.css'
 
-import { Accordion,AccordionSummary,AccordionDetails,Typography } from '@mui/material';
+import { Accordion,AccordionSummary,AccordionDetails } from '@mui/material';
+import { MdOutlineExpandMore } from 'react-icons/md';
 
 
 function AccordionComponent({data}) {
@@ -10,10 +11,9 @@ function AccordionComponent({data}) {
     <>
 
       <Accordion>
-        <AccordionSummary>
+        <AccordionSummary expandIcon={<MdOutlineExpandMore/>}>
           <div className="title">
             <p>{data.title}</p>
-            <p className='title'>oieee</p>
           </div>
         </AccordionSummary>
   
