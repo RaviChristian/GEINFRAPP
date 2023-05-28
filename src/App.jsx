@@ -19,10 +19,12 @@ const data = [{
 
 
 function App() {
-
+  
   return(
     <>
-      <AccordionComponent data={data[0]}/>
+      {data.map(item => (
+        <AccordionComponent data={item}/>
+      ))}
     </>
   );
 }
