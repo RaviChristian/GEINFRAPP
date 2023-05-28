@@ -12,10 +12,6 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform form submission logic here
-    // You can access the form field values using the state variables
-
-    // Reset form fields after submission
     setFullName('');
     setEmail('');
     setSiape('');
