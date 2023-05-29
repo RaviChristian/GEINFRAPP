@@ -5,7 +5,6 @@ const port = 3001;
 
 const { salvar, listar } = require('./repositoryInterface');
 
-
 app.use(bodyParser.json());
 
 
@@ -25,9 +24,9 @@ app.post('/api/POSTformulario', (req, res) => {
 
 });
   
-app.get('/api/GETformularios', (req, res) => {
+app.get('/api/GETformulario', async (req, res) => {
 
-    const allForms = awaitlistar()
+    const allForms = await listar()
 
     return res.status(200).send(allForms);
     

@@ -14,6 +14,7 @@ Form.init({
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
+    allowNull: false,
   },
   fullName: {
     type: DataTypes.STRING,
