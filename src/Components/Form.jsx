@@ -2,6 +2,11 @@ import './css/Form.css';
 
 import React, { useState } from 'react';
 
+import axios from 'axios';
+const apiBaseUrl = 'http://localhost:3001';
+
+
+
 function Form() {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -9,9 +14,29 @@ function Form() {
   const [unit, setUnit] = useState('');
   const [phone, setPhone] = useState('');
   const [description, setDescription] = useState('');
-
+  
   const handleSubmit = (e) => {
+    
     e.preventDefault();
+
+    const formData = {
+      fullName: fullName,
+      description: description,
+      email: email,
+      siape: siape,
+      unit: unit,
+      phone: phone,
+      description: description
+    };
+
+    axios.post(`${apiBaseUrl}/api/POSTformulario`, formData)
+        .then(response => {
+            console.log(response)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+
     setFullName('');
     setEmail('');
     setSiape('');

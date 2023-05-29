@@ -2,8 +2,9 @@ import Footer from '../Components/Footer';
 import Navigation from '../Components/Navigation';
 import Form from '../Components/Form';
 
-function RenderedForm() {
 
+function RenderedForm() {
+  
   return(
     <>
     <Navigation/>

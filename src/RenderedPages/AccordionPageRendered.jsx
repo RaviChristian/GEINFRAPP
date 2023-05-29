@@ -2,22 +2,29 @@ import Navigation from '../Components/Navigation';
 import Footer from '../Components/Footer';
 import AccordionComponent from '../Components/AccordionComponent';
 
-
 import '../Components/css/AccordionPageRendered.css';
+import axios from 'axios';
+const apiBaseUrl = 'http://localhost:3001';
 
-const data = [{
-  title : "Lorem ipsum dolor, sit amet ciendis?",
-  text: "oieeeeee"
-},
-{
-  title : "titulo?????",
-  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur et quae at, aliquid distinctio, pariatur voluptate voluptates accusamus possimus perspiciatis eaque quia! Neque, doloribus molestias."
-},
-{
-    title : "Lorem ipsum dolor, sit amet ciendis?",
-    text: "oieeeeee"
+
+
+
+async function getForms() {
+  axios.post(`${apiBaseUrl}/api/GETformularios`)
+    .then(response => {
+        const formData = response
+        return formData
+    })
+    .catch(error => {
+        console.log(error)
+        return error
+    })
 }
-]
+
+const data = await getForms()
+
+console.log("AAAAAAAAAAAAAAAAAAAAAA")
+console.log(data)
 
 
 
