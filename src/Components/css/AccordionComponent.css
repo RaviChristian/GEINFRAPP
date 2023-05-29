@@ -1,5 +1,26 @@
 .MuiPaper-root {
-
     background-color: rgb(240, 237, 234) !important;
     margin-bottom: 1%;
+}
+
+
+.accordion-details-h2 {
+    font-size: 22px;
+}
+.accordion-details-p {
+    font-size: 18px;
+}
+
+.accordion-details-button {
+    margin-top: 1%;
+    height: 25px !important;
+    width: 10%;
+}
+
+.incomplete {
+    color: red;
+}
+
+.complete {
+    color: green;
 }

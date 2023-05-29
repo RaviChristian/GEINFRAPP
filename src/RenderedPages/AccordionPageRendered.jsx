@@ -1,51 +1,46 @@
+import React, { useState, useEffect } from 'react';
 import Navigation from '../Components/Navigation';
 import Footer from '../Components/Footer';
 import AccordionComponent from '../Components/AccordionComponent';
-
 import '../Components/css/AccordionPageRendered.css';
 import axios from 'axios';
+
 const apiBaseUrl = 'http://localhost:3001';
 
-
-
-
-async function getForms() {
-  axios.post(`${apiBaseUrl}/api/GETformularios`)
-    .then(response => {
-        const formData = response
-        return formData
-    })
-    .catch(error => {
-        console.log(error)
-        return error
-    })
-}
-
-const data = await getForms()
-
-console.log("AAAAAAAAAAAAAAAAAAAAAA")
-console.log(data)
-
-
-
 function AccordionPageRendered() {
-  
-  return(
+  const [formData, setFormData] = useState([]);
+
+  useEffect(() => {
+    async function getForms() {
+      try {
+        const response = await axios.get(`${apiBaseUrl}/api/GETformulario`);
+        console.log("Recebeu response")
+        const formData = response.data;
+        setFormData(formData);
+      } catch (error) {
+        console.log("Recebeu erro")
+        console.log(error);
+      }
+    }
+
+    getForms();
+  }, []);
+
+  return (
     <>
-        <Navigation/>
+      <Navigation/>
 
-        <div className="accordion-outter-wrapper">
-            <div className="accordion-inner-wrapper">
-                {data.map(item => (
-                    <AccordionComponent data={item}/>
-                ))}
-
-            </div>
+      <div className="accordion-outter-wrapper">
+        <div className="accordion-inner-wrapper">
+          {formData.map(item => (
+            <AccordionComponent key={item.id} data={item} />
+          ))}
         </div>
+      </div>
 
-        <Footer/>
+      <Footer/>
     </>
   );
 }
 
-export default AccordionPageRendered
+export default AccordionPageRendered;
