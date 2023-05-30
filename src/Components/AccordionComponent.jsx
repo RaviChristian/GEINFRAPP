@@ -4,17 +4,17 @@ import axios from 'axios';
 import { Accordion,AccordionSummary,AccordionDetails } from '@mui/material';
 import { MdOutlineExpandMore } from 'react-icons/md';
 
+const apiBaseUrl = "http://localhost:3001"
 
-  async function deleteForm(id) {
-    try {
-      const response = await axios.get(`${apiBaseUrl}/api/DELETEformulario/${id}`);
-      console.log("Funcionou my friend")
 
-    } catch (error) {
-      console.log("Erro na response do deleteForm")
-      console.log(error);
-    }
-  
+async function deleteForm(id) {
+  try {
+    await axios.delete(`${apiBaseUrl}/api/DELETEformulario/${id}`);
+    window.location.reload()
+  } catch (error) {
+    console.log("Erro na resposta do deleteForm");
+    console.log(error);
+  }
 }
 
 function AccordionComponent({data}) {
@@ -46,8 +46,8 @@ function AccordionComponent({data}) {
 
 
 
-            <button id="delete-button" className='accordion-details-button'> Deletar </button>
-            <button onClick={() => deleteForm(data.id)} className='accordion-details-button'> Alterar Status </button>
+            <button id="delete-button" onClick={() => deleteForm(data.id)} className='accordion-details-button'> Deletar </button>
+            <button className='accordion-details-button'> Alterar Status </button>
         </AccordionDetails>
       </Accordion>
 
