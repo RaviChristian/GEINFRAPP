@@ -10,7 +10,7 @@ function Section() {
                 <div className="upper-buttons">
 
                     <div>
-                        <HomeButton link='listar' icon="BiSearchAlt" text="Visualize aqui todas as ordens de serviço" title="solicitações" className="custom-button"/>
+                        <HomeButton link='cadastrar' icon="BiSearchAlt" text="Cadastre aqui todas as ordens de serviço" title="solicitações" className="custom-button"/>
                     </div>
                     
                     <div>
@@ -22,11 +22,11 @@ function Section() {
                 <div className="lower-buttons">
                 
                     <div>
-                        <HomeButton link='cadastrar' icon="BsGraphUp" text="Filtre as informações e gere relatórios das ordens de serviço" title="relatórios" className="custom-button"/>
+                        <HomeButton link='listar' icon="TbUrgent" text="Gerencie as ordens de serviços corretivas" title="correções" className="custom-button"/>
                     </div>
                     
                     <div>
-                        <HomeButton link='cadastrar' icon="BsGraphUp" text="Filtre as informações e gere relatórios das ordens de serviço" title="relatórios" className="custom-button"/>
+                        <HomeButton link='listarFormularios' icon="BsGraphUp" text="Filtre as informações e gere relatórios das ordens de serviço" title="relatórios" className="custom-button"/>
                     </div>
                 </div>
 

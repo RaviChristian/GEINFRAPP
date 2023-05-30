@@ -1,0 +1,21 @@
+.sidebar-buttons svg{
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end; 
+    color: white;
+    padding: 5px;
+    background-color: var(--secondary-color);
+    width: 7vh;
+    height: 7vh;
+    border-radius: 100%;
+    margin: 2%;
+    box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.07);
+    transition: background-color 1s ease-out 100ms
+
+}
+
+.sidebar-buttons svg:hover {
+    background-color: #008491;
+}

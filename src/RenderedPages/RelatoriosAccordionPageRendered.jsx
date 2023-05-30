@@ -4,26 +4,28 @@ import Footer from '../Components/Footer';
 import AccordionComponent from '../Components/AccordionComponent';
 import '../Components/css/AccordionPageRendered.css';
 import axios from 'axios';
-import SidebarComponent from '../Components/SidebarComponent'
 
 const apiBaseUrl = 'http://localhost:3001';
 
-function AccordionPageRendered() {
+function RelatoriosAccordionPageRendered() {
   const [formData, setFormData] = useState([]);
 
   useEffect(() => {
-    async function getForms() {
+    async function getRelatorios() {
       try {
-        const response = await axios.get(`${apiBaseUrl}/api/GETformulario`);
-        const formData = response.data;
-        setFormData(formData);
+        console.log("[inicia] getRelatorios")
+        const response = await axios.get(`${apiBaseUrl}/api/GETrelatorioFormulario`);
+        const relatoriosData = response.data;
+        console.log("[finaliza] getRelatorios")
+        console.log(response)
+        setFormData(relatoriosData);
       } catch (error) {
-        console.log("Erro na response do getForms")
+        console.log("Erro na response do getRelatorios ")
         console.log(error);
       }
     }
 
-    getForms();
+    getRelatorios();
   }, []);
 
   return (
@@ -43,4 +45,4 @@ function AccordionPageRendered() {
   );
 }
 
-export default AccordionPageRendered;
+export default RelatoriosAccordionPageRendered;

@@ -17,6 +17,17 @@ async function deleteForm(id) {
   }
 }
 
+async function updateStatus(formData){
+
+  try {
+    await axios.post(`${apiBaseUrl}/api/POSTrelatorioFormulario/`, formData);
+
+    await deleteForm(formData.id)
+  } catch(error) {
+    console.log(error)
+  }
+}
+
 function AccordionComponent({data}) {
 
   
@@ -47,7 +58,7 @@ function AccordionComponent({data}) {
 
 
             <button id="delete-button" onClick={() => deleteForm(data.id)} className='accordion-details-button'> Deletar </button>
-            <button className='accordion-details-button'> Alterar Status </button>
+            <button onClick={() => updateStatus({id: data.id, fullName: data.fullName, email: data.email, siape: data.siape, unit: data.unit, phone: data.phone, description: data.description, createdAt: data.createdAt, updatedAt: data.updatedAt, isComplete: true})} className='accordion-details-button'> Alterar Status </button>
         </AccordionDetails>
       </Accordion>
 

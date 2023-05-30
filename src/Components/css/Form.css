@@ -76,5 +76,12 @@ label {
 
 #form-submit-button {
     width: 100%;
+    border-radius: 2%;
+    transition: all 1s ease-out 100ms;
+
 }
 
+#form-submit-button:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}

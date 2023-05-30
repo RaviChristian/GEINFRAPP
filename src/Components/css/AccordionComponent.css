@@ -26,9 +26,9 @@
     background-color: #00becf70;
 }
 .incomplete {
-    color: red;
+    color: red !important;
 }
 
-.complete {
-    color: green;
+.completed {
+    color: green !important;
 }
