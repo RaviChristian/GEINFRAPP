@@ -1,12 +1,25 @@
 import './css/AccordionComponent.css'
+import axios from 'axios';
 
 import { Accordion,AccordionSummary,AccordionDetails } from '@mui/material';
 import { MdOutlineExpandMore } from 'react-icons/md';
 
 
+  async function deleteForm(id) {
+    try {
+      const response = await axios.get(`${apiBaseUrl}/api/DELETEformulario/${id}`);
+      console.log("Funcionou my friend")
+
+    } catch (error) {
+      console.log("Erro na response do deleteForm")
+      console.log(error);
+    }
+  
+}
+
 function AccordionComponent({data}) {
 
-  console.log(data)
+  
   return (
     <>
 
@@ -28,12 +41,13 @@ function AccordionComponent({data}) {
             <h2 className='accordion-details-h2'>Criado em: </h2><p className="accordion-details-p">{data.createdAt}</p>
             <h2 className='accordion-details-h2'>Última atualização: </h2><p className="accordion-details-p">{data.updatedAt}</p>
             <p id="accordion-details-isComplete" className={`${data.isComplete ? 'completed' : 'incomplete'}`}>
-            {data.isComplete ? 'Finailzado' : 'Em progresso'}
+            Status: {data.isComplete ? 'Finailzado' : 'Em progresso'}
 </p>
 
 
 
-            <button className='accordion-details-button'> Editar </button>
+            <button id="delete-button" className='accordion-details-button'> Deletar </button>
+            <button onClick={() => deleteForm(data.id)} className='accordion-details-button'> Alterar Status </button>
         </AccordionDetails>
       </Accordion>
 

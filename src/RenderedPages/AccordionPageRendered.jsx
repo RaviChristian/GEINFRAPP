@@ -14,11 +14,10 @@ function AccordionPageRendered() {
     async function getForms() {
       try {
         const response = await axios.get(`${apiBaseUrl}/api/GETformulario`);
-        console.log("Recebeu response")
         const formData = response.data;
         setFormData(formData);
       } catch (error) {
-        console.log("Recebeu erro")
+        console.log("Erro na response do getForms")
         console.log(error);
       }
     }

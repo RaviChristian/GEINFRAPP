@@ -40,8 +40,13 @@ Form.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
+  isComplete: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+  }
+}
 
-}, {
+, {
   sequelize,
   modelName: 'forms',
 });
@@ -55,20 +60,38 @@ async function salvar(fullName,email,siape,unit,phone,description) {
         siape,
         unit,
         phone,
-        description
+        description,
+        isComplete: false,
     })
   };
   
 async function listar() {
-    await sequelize.sync();
+  await sequelize.sync();
 
-    const allForms = await Form.findAll();
+  const allForms = await Form.findAll();
 
-    return allForms
+  return allForms
 }
+
+async function deletar(id) {
+  try {
+    await Form.destroy({
+      where: {
+        id: id
+      }
+    });
+
+    console.log('Formulário deletado com sucesso!');
+  } catch (error) {
+    console.log('Erro ao deletar formulário:');
+    console.log(error);
+  }
+}
+
 
 module.exports = {
     salvar,
-    listar
+    listar,
+    deletar
   };
   
