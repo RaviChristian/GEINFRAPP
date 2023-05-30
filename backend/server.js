@@ -32,15 +32,22 @@ app.get('/api/GETformulario', async (req, res) => {
     
 });
 
-app.delete('/api/DELETEformulario', async (req, res) => {
+app.delete('/api/DELETEformulario/:id', async (req, res) => {
 
   const {id} = req.params;
-  await deletar(id)
+  console.log(id)
 
-  return res.status(200).send("Deleted meu parceiro");
+  try{
+    const deleteResponse = await deletar(id);
+    return res.status(200).send(deleteResponse);
+  } 
+  catch(error) {
+    return res.status(500).send("Internal Server Error")
+  }
+
   
 });
   
 app.listen(port, () => {
-  console.log(`Servidor backend iniciado na porta ${port}`);
+  console.log(`Servidor iniciado na porta ${port}`);
 });

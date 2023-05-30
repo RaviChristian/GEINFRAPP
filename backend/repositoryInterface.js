@@ -75,16 +75,24 @@ async function listar() {
 
 async function deletar(id) {
   try {
-    await Form.destroy({
+    const form = await Form.findOne({
       where: {
         id: id
       }
     });
 
-    console.log('Formulário deletado com sucesso!');
+    if (form) {
+      await Form.destroy({
+        where: {
+          id: id
+        }
+      });
+      return('Formulário deletado com sucesso!');
+    } else {
+      return('O formulário com o ID fornecido não existe.');
+    }
   } catch (error) {
-    console.log('Erro ao deletar formulário:');
-    console.log(error);
+    return('Erro ao deletar formulário:');
   }
 }
 
